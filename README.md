@@ -1,7 +1,7 @@
 What is Crow?
 ----------------
 
-In the fictional world of Westeros, the crow is the poorer cousin of the raven.
+In the fictional world of Westeros, the crow is the poor cousin of the raven.
 
 Thank you to the Bitcoin and Ravencoin developers. 
 
