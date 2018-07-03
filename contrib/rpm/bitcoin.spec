@@ -13,31 +13,31 @@
 %endif
 %endif
 
-Name:		raven
+Name:		crow
 Version:	0.12.0
 Release:	2%{?dist}
 Summary:	Peer to Peer Cryptographic Currency
 
 Group:		Applications/System
 License:	MIT
-URL:		https://raven.org/
-Source0:	https://raven.org/bin/raven-core-%{version}/raven-%{version}.tar.gz
+URL:		https://crow.org/
+Source0:	https://crow.org/bin/crow-core-%{version}/crow-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/raven/raven/v%{version}/contrib/debian/examples/raven.conf
+Source10:	https://raw.githubusercontent.com/crow/crow/v%{version}/contrib/debian/examples/crow.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/raven/raven/v%{version}/doc/man/ravend.1
-Source21:	https://raw.githubusercontent.com/raven/raven/v%{version}/doc/man/raven-cli.1
-Source22:	https://raw.githubusercontent.com/raven/raven/v%{version}/doc/man/raven-qt.1
+Source20:	https://raw.githubusercontent.com/crow/crow/v%{version}/doc/man/crowd.1
+Source21:	https://raw.githubusercontent.com/crow/crow/v%{version}/doc/man/crow-cli.1
+Source22:	https://raw.githubusercontent.com/crow/crow/v%{version}/doc/man/crow-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/raven/raven/v%{version}/contrib/rpm/raven.te
-# Source31 - what about raven-tx and bench_raven ???
-Source31:	https://raw.githubusercontent.com/raven/raven/v%{version}/contrib/rpm/raven.fc
-Source32:	https://raw.githubusercontent.com/raven/raven/v%{version}/contrib/rpm/raven.if
+Source30:	https://raw.githubusercontent.com/crow/crow/v%{version}/contrib/rpm/crow.te
+# Source31 - what about crow-tx and bench_crow ???
+Source31:	https://raw.githubusercontent.com/crow/crow/v%{version}/contrib/rpm/crow.fc
+Source32:	https://raw.githubusercontent.com/crow/crow/v%{version}/contrib/rpm/crow.if
 
-Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Raven.svg
+Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Crow.svg
 
 %if 0%{?_use_libressl:1}
 BuildRequires:	libressl-devel
@@ -50,13 +50,13 @@ BuildRequires:	autoconf automake libtool
 BuildRequires:	libevent-devel
 
 
-Patch0:		raven-0.12.0-libressl.patch
+Patch0:		crow-0.12.0-libressl.patch
 
 
 %description
-Raven is a digital cryptographic currency that uses peer-to-peer technology to
+Crow is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of ravens is carried out collectively by the network.
+issuing of crows is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -79,42 +79,42 @@ BuildRequires:	%{_bindir}/inkscape
 BuildRequires:	%{_bindir}/convert
 
 %description core
-Raven is a digital cryptographic currency that uses peer-to-peer technology to
+Crow is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of ravens is carried out collectively by the network.
+issuing of crows is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
-to run a Raven wallet, this is probably the package you want.
+to run a Crow wallet, this is probably the package you want.
 %endif
 
 
 %package libs
-Summary:	Raven shared libraries
+Summary:	Crow shared libraries
 Group:		System Environment/Libraries
 
 %description libs
-This package provides the ravenconsensus shared libraries. These libraries
+This package provides the crowconsensus shared libraries. These libraries
 may be used by third party software to provide consensus verification
 functionality.
 
 Unless you know need this package, you probably do not.
 
 %package devel
-Summary:	Development files for raven
+Summary:	Development files for crow
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 This package contains the header files and static library for the
-ravenconsensus shared library. If you are developing or compiling software
+crowconsensus shared library. If you are developing or compiling software
 that wants to link against that library, then you need this package installed.
 
 Most people do not need this package installed.
 
 %package server
-Summary:	The raven daemon
+Summary:	The crow daemon
 Group:		System Environment/Daemons
-Requires:	raven-utils = %{version}-%{release}
+Requires:	crow-utils = %{version}-%{release}
 Requires:	selinux-policy policycoreutils-python
 Requires(pre):	shadow-utils
 Requires(post):	%{_sbindir}/semodule %{_sbindir}/restorecon %{_sbindir}/fixfiles %{_sbindir}/sestatus
@@ -124,34 +124,34 @@ BuildRequires:	checkpolicy
 BuildRequires:	%{_datadir}/selinux/devel/Makefile
 
 %description server
-This package provides a stand-alone raven-core daemon. For most users, this
+This package provides a stand-alone crow-core daemon. For most users, this
 package is only needed if they need a full-node without the graphical client.
 
 Some third party wallet software will want this package to provide the actual
-raven-core node they use to connect to the network.
+crow-core node they use to connect to the network.
 
-If you use the graphical raven-core client then you almost certainly do not
+If you use the graphical crow-core client then you almost certainly do not
 need this package.
 
 %package utils
-Summary:	Raven utilities
+Summary:	Crow utilities
 Group:		Applications/System
 
 %description utils
 This package provides several command line utilities for interacting with a
-raven-core daemon.
+crow-core daemon.
 
-The raven-cli utility allows you to communicate and control a raven daemon
-over RPC, the raven-tx utility allows you to create a custom transaction, and
-the bench_raven utility can be used to perform some benchmarks.
+The crow-cli utility allows you to communicate and control a crow daemon
+over RPC, the crow-tx utility allows you to create a custom transaction, and
+the bench_crow utility can be used to perform some benchmarks.
 
-This package contains utilities needed by the raven-server package.
+This package contains utilities needed by the crow-server package.
 
 
 %prep
 %setup -q
 %patch0 -p1 -b .libressl
-cp -p %{SOURCE10} ./raven.conf.example
+cp -p %{SOURCE10} ./crow.conf.example
 tar -zxf %{SOURCE1}
 cp -p db-%{bdbv}.NC/LICENSE ./db-%{bdbv}.NC-LICENSE
 mkdir db4 SELinux
@@ -172,7 +172,7 @@ make %{?_smp_mflags}
 pushd SELinux
 for selinuxvariant in %{selinux_variants}; do
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile
-	mv raven.pp raven.pp.${selinuxvariant}
+	mv crow.pp crow.pp.${selinuxvariant}
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile clean
 done
 popd
@@ -182,42 +182,42 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/ravend %{buildroot}%{_sbindir}/ravend
+mv %{buildroot}%{_bindir}/crowd %{buildroot}%{_sbindir}/crowd
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
-cat <<EOF > %{buildroot}%{_tmpfilesdir}/raven.conf
-d /run/ravend 0750 raven raven -
+cat <<EOF > %{buildroot}%{_tmpfilesdir}/crow.conf
+d /run/crowd 0750 crow crow -
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/raven.conf
+touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/crow.conf
 
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/raven
-# Provide options to the raven daemon here, for example
+cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/crow
+# Provide options to the crow daemon here, for example
 # OPTIONS="-testnet -disable-wallet"
 
 OPTIONS=""
 
 # System service defaults.
 # Don't change these unless you know what you're doing.
-CONFIG_FILE="%{_sysconfdir}/raven/raven.conf"
-DATA_DIR="%{_localstatedir}/lib/raven"
-PID_FILE="/run/ravend/ravend.pid"
+CONFIG_FILE="%{_sysconfdir}/crow/crow.conf"
+DATA_DIR="%{_localstatedir}/lib/crow"
+PID_FILE="/run/crowd/crowd.pid"
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/raven
+touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/crow
 
 mkdir -p %{buildroot}%{_unitdir}
-cat <<EOF > %{buildroot}%{_unitdir}/raven.service
+cat <<EOF > %{buildroot}%{_unitdir}/crow.service
 [Unit]
-Description=Raven daemon
+Description=Crow daemon
 After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/ravend -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
-EnvironmentFile=%{_sysconfdir}/sysconfig/raven
-User=raven
-Group=raven
+ExecStart=%{_sbindir}/crowd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+EnvironmentFile=%{_sysconfdir}/sysconfig/crow
+User=crow
+Group=crow
 
 Restart=on-failure
 PrivateTmp=true
@@ -229,63 +229,63 @@ StartLimitBurst=5
 [Install]
 WantedBy=multi-user.target
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/raven.service
+touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/crow.service
 #end systemd stuff
 
-mkdir %{buildroot}%{_sysconfdir}/raven
-mkdir -p %{buildroot}%{_localstatedir}/lib/raven
+mkdir %{buildroot}%{_sysconfdir}/crow
+mkdir -p %{buildroot}%{_localstatedir}/lib/crow
 
 #SELinux
 for selinuxvariant in %{selinux_variants}; do
 	install -d %{buildroot}%{_datadir}/selinux/${selinuxvariant}
-	install -p -m 644 SELinux/raven.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/raven.pp
+	install -p -m 644 SELinux/crow.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/crow.pp
 done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/raven.ico %{buildroot}%{_datadir}/pixmaps/raven.ico
+install -D -p share/pixmaps/crow.ico %{buildroot}%{_datadir}/pixmaps/crow.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/raven.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/raven16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/raven32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/raven64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/raven128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/raven256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/raven256.png %{buildroot}%{_datadir}/pixmaps/raven16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/raven256.png %{buildroot}%{_datadir}/pixmaps/raven32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/raven256.png %{buildroot}%{_datadir}/pixmaps/raven64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/raven256.png %{buildroot}%{_datadir}/pixmaps/raven128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/raven256.png %{buildroot}%{_datadir}/pixmaps/raven256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/crow.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/crow16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/crow32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/crow64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/crow128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/crow256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/crow256.png %{buildroot}%{_datadir}/pixmaps/crow16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/crow256.png %{buildroot}%{_datadir}/pixmaps/crow32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/crow256.png %{buildroot}%{_datadir}/pixmaps/crow64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/crow256.png %{buildroot}%{_datadir}/pixmaps/crow128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/crow256.png %{buildroot}%{_datadir}/pixmaps/crow256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
 # Desktop File - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/applications
-cat <<EOF > %{buildroot}%{_datadir}/applications/raven-core.desktop
+cat <<EOF > %{buildroot}%{_datadir}/applications/crow-core.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=Raven
-Comment=Raven P2P Cryptocurrency
-Comment[fr]=Raven, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Raven, eşten eşe kriptografik sanal para birimi
-Exec=raven-qt %u
+Name=Crow
+Comment=Crow P2P Cryptocurrency
+Comment[fr]=Crow, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Crow, eşten eşe kriptografik sanal para birimi
+Exec=crow-qt %u
 Terminal=false
 Type=Application
-Icon=raven128
-MimeType=x-scheme-handler/raven;
+Icon=crow128
+MimeType=x-scheme-handler/crow;
 Categories=Office;Finance;
 EOF
 # change touch date when modifying desktop
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/raven-core.desktop
-%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/raven-core.desktop
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/crow-core.desktop
+%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/crow-core.desktop
 
 # KDE protocol - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/kde4/services
-cat <<EOF > %{buildroot}%{_datadir}/kde4/services/raven-core.protocol
+cat <<EOF > %{buildroot}%{_datadir}/kde4/services/crow-core.protocol
 [Protocol]
-exec=raven-qt '%u'
-protocol=raven
+exec=crow-qt '%u'
+protocol=crow
 input=none
 output=none
 helper=true
@@ -296,14 +296,14 @@ makedir=false
 deleting=false
 EOF
 # change touch date when modifying protocol
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/raven-core.protocol
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/crow-core.protocol
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/ravend.1
-install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/raven-cli.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/crowd.1
+install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/crow-cli.1
 %if %{_buildqt}
-install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/raven-qt.1
+install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/crow-qt.1
 %endif
 
 # nuke these, we do extensive testing of binaries in %%check before packaging
@@ -311,7 +311,7 @@ rm -f %{buildroot}%{_bindir}/test_*
 
 %check
 make check
-srcdir=src test/raven-util-test.py
+srcdir=src test/crow-util-test.py
 test/functional/test_runner.py --extended
 
 %post libs -p /sbin/ldconfig
@@ -319,37 +319,37 @@ test/functional/test_runner.py --extended
 %postun libs -p /sbin/ldconfig
 
 %pre server
-getent group raven >/dev/null || groupadd -r raven
-getent passwd raven >/dev/null ||
-	useradd -r -g raven -d /var/lib/raven -s /sbin/nologin \
-	-c "Raven wallet server" raven
+getent group crow >/dev/null || groupadd -r crow
+getent passwd crow >/dev/null ||
+	useradd -r -g crow -d /var/lib/crow -s /sbin/nologin \
+	-c "Crow wallet server" crow
 exit 0
 
 %post server
-%systemd_post raven.service
+%systemd_post crow.service
 # SELinux
 if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
-	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/raven.pp &> /dev/null || :
+	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/crow.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t raven_port_t -p tcp 8766
-%{_sbindir}/semanage port -a -t raven_port_t -p tcp 8767
-%{_sbindir}/semanage port -a -t raven_port_t -p tcp 18766
-%{_sbindir}/semanage port -a -t raven_port_t -p tcp 18767
-%{_sbindir}/semanage port -a -t raven_port_t -p tcp 18443
-%{_sbindir}/semanage port -a -t raven_port_t -p tcp 18444
-%{_sbindir}/fixfiles -R raven-server restore &> /dev/null || :
-%{_sbindir}/restorecon -R %{_localstatedir}/lib/raven || :
+%{_sbindir}/semanage port -a -t crow_port_t -p tcp 8766
+%{_sbindir}/semanage port -a -t crow_port_t -p tcp 8767
+%{_sbindir}/semanage port -a -t crow_port_t -p tcp 18766
+%{_sbindir}/semanage port -a -t crow_port_t -p tcp 18767
+%{_sbindir}/semanage port -a -t crow_port_t -p tcp 18443
+%{_sbindir}/semanage port -a -t crow_port_t -p tcp 18444
+%{_sbindir}/fixfiles -R crow-server restore &> /dev/null || :
+%{_sbindir}/restorecon -R %{_localstatedir}/lib/crow || :
 fi
 
 %posttrans server
 %{_bindir}/systemd-tmpfiles --create
 
 %preun server
-%systemd_preun raven.service
+%systemd_preun crow.service
 
 %postun server
-%systemd_postun raven.service
+%systemd_postun crow.service
 # SELinux
 if [ $1 -eq 0 ]; then
 	if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
@@ -360,11 +360,11 @@ if [ $1 -eq 0 ]; then
 	%{_sbindir}/semanage port -d -p tcp 18443
 	%{_sbindir}/semanage port -d -p tcp 18444
 	for selinuxvariant in %{selinux_variants}; do
-		%{_sbindir}/semodule -s ${selinuxvariant} -r raven &> /dev/null || :
+		%{_sbindir}/semodule -s ${selinuxvariant} -r crow &> /dev/null || :
 	done
-	%{_sbindir}/fixfiles -R raven-server restore &> /dev/null || :
-	[ -d %{_localstatedir}/lib/raven ] && \
-		%{_sbindir}/restorecon -R %{_localstatedir}/lib/raven &> /dev/null || :
+	%{_sbindir}/fixfiles -R crow-server restore &> /dev/null || :
+	[ -d %{_localstatedir}/lib/crow ] && \
+		%{_sbindir}/restorecon -R %{_localstatedir}/lib/crow &> /dev/null || :
 	fi
 fi
 
@@ -375,16 +375,16 @@ rm -rf %{buildroot}
 %files core
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING raven.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_bindir}/raven-qt
-%attr(0644,root,root) %{_datadir}/applications/raven-core.desktop
-%attr(0644,root,root) %{_datadir}/kde4/services/raven-core.protocol
+%doc COPYING crow.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_bindir}/crow-qt
+%attr(0644,root,root) %{_datadir}/applications/crow-core.desktop
+%attr(0644,root,root) %{_datadir}/kde4/services/crow-core.protocol
 %attr(0644,root,root) %{_datadir}/pixmaps/*.ico
 %attr(0644,root,root) %{_datadir}/pixmaps/*.bmp
 %attr(0644,root,root) %{_datadir}/pixmaps/*.svg
 %attr(0644,root,root) %{_datadir}/pixmaps/*.png
 %attr(0644,root,root) %{_datadir}/pixmaps/*.xpm
-%attr(0644,root,root) %{_mandir}/man1/raven-qt.1*
+%attr(0644,root,root) %{_mandir}/man1/crow-qt.1*
 %endif
 
 %files libs
@@ -406,30 +406,30 @@ rm -rf %{buildroot}
 %files server
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING raven.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/ravend
-%attr(0644,root,root) %{_tmpfilesdir}/raven.conf
-%attr(0644,root,root) %{_unitdir}/raven.service
-%dir %attr(0750,raven,raven) %{_sysconfdir}/raven
-%dir %attr(0750,raven,raven) %{_localstatedir}/lib/raven
-%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/raven
+%doc COPYING crow.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_sbindir}/crowd
+%attr(0644,root,root) %{_tmpfilesdir}/crow.conf
+%attr(0644,root,root) %{_unitdir}/crow.service
+%dir %attr(0750,crow,crow) %{_sysconfdir}/crow
+%dir %attr(0750,crow,crow) %{_localstatedir}/lib/crow
+%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/crow
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/ravend.1*
+%attr(0644,root,root) %{_mandir}/man1/crowd.1*
 
 %files utils
 %defattr(-,root,root,-)
 %license COPYING
-%doc COPYING raven.conf.example doc/README.md
-%attr(0755,root,root) %{_bindir}/raven-cli
-%attr(0755,root,root) %{_bindir}/raven-tx
-%attr(0755,root,root) %{_bindir}/bench_raven
-%attr(0644,root,root) %{_mandir}/man1/raven-cli.1*
+%doc COPYING crow.conf.example doc/README.md
+%attr(0755,root,root) %{_bindir}/crow-cli
+%attr(0755,root,root) %{_bindir}/crow-tx
+%attr(0755,root,root) %{_bindir}/bench_crow
+%attr(0644,root,root) %{_mandir}/man1/crow-cli.1*
 
 
 
 %changelog
 * Fri Feb 26 2016 Alice Wonder <buildmaster@librelamp.com> - 0.12.0-2
-- Rename Qt package from raven to raven-core
+- Rename Qt package from crow to crow-core
 - Make building of the Qt package optional
 - When building the Qt package, default to Qt5 but allow building
 -  against Qt4
@@ -439,4 +439,4 @@ rm -rf %{buildroot}
 - Initial spec file for 0.12.0 release
 
 # This spec file is written from scratch but a lot of the packaging decisions are directly
-# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/raven/
+# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/crow/

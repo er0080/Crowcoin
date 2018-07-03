@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: ravend.service
-Upstart: ravend.conf
-OpenRC:  ravend.openrc
-         ravend.openrcconf
-CentOS:  ravend.init
-OS X:    org.raven.ravend.plist
+SystemD: crowd.service
+Upstart: crowd.conf
+OpenRC:  crowd.openrc
+         crowd.openrcconf
+CentOS:  crowd.init
+OS X:    org.crow.crowd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

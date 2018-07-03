@@ -1,33 +1,33 @@
-# /etc/conf.d/ravend: config file for /etc/init.d/ravend
+# /etc/conf.d/crowd: config file for /etc/init.d/crowd
 
 # Config file location
-#RAVEND_CONFIGFILE="/etc/raven/raven.conf"
+#CROWD_CONFIGFILE="/etc/crow/crow.conf"
 
-# What directory to write pidfile to?  (created and owned by $RAVEND_USER)
-#RAVEND_PIDDIR="/var/run/ravend"
+# What directory to write pidfile to?  (created and owned by $CROWD_USER)
+#CROWD_PIDDIR="/var/run/crowd"
 
 # What filename to give the pidfile
-#RAVEND_PIDFILE="${RAVEND_PIDDIR}/ravend.pid"
+#CROWD_PIDFILE="${CROWD_PIDDIR}/crowd.pid"
 
-# Where to write ravend data (be mindful that the blockchain is large)
-#RAVEND_DATADIR="/var/lib/ravend"
+# Where to write crowd data (be mindful that the blockchain is large)
+#CROWD_DATADIR="/var/lib/crowd"
 
-# User and group to own ravend process
-#RAVEND_USER="raven"
-#RAVEND_GROUP="raven"
+# User and group to own crowd process
+#CROWD_USER="crow"
+#CROWD_GROUP="crow"
 
-# Path to ravend executable
-#RAVEND_BIN="/usr/bin/ravend"
+# Path to crowd executable
+#CROWD_BIN="/usr/bin/crowd"
 
-# Nice value to run ravend under
-#RAVEND_NICE=0
+# Nice value to run crowd under
+#CROWD_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-#RAVEND_OPTS=""
+#CROWD_OPTS=""
 
-# The timeout in seconds OpenRC will wait for ravend to terminate
+# The timeout in seconds OpenRC will wait for crowd to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-RAVEND_SIGTERM_TIMEOUT=60
+CROWD_SIGTERM_TIMEOUT=60

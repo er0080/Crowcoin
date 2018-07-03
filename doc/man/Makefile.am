@@ -1,13 +1,13 @@
 dist_man1_MANS=
 
-if BUILD_RAVEND
-  dist_man1_MANS+=ravend.1
+if BUILD_CROWD
+  dist_man1_MANS+=crowd.1
 endif
 
 if ENABLE_QT
-  dist_man1_MANS+=raven-qt.1
+  dist_man1_MANS+=crow-qt.1
 endif
 
-if BUILD_RAVEN_UTILS
-  dist_man1_MANS+=raven-cli.1 raven-tx.1
+if BUILD_CROW_UTILS
+  dist_man1_MANS+=crow-cli.1 crow-tx.1
 endif

@@ -1,15 +1,15 @@
 [Unit]
-Description=Raven's distributed currency daemon
+Description=Crow's distributed currency daemon
 After=network.target
 
 [Service]
-User=raven
-Group=raven
+User=crow
+Group=crow
 
 Type=forking
-PIDFile=/var/lib/ravend/ravend.pid
-ExecStart=/usr/bin/ravend -daemon -pid=/var/lib/ravend/ravend.pid \
--conf=/etc/raven/raven.conf -datadir=/var/lib/ravend -disablewallet
+PIDFile=/var/lib/crowd/crowd.pid
+ExecStart=/usr/bin/crowd -daemon -pid=/var/lib/crowd/crowd.pid \
+-conf=/etc/crow/crow.conf -datadir=/var/lib/crowd -disablewallet
 
 Restart=always
 PrivateTmp=true

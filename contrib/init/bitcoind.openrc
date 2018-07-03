@@ -2,41 +2,41 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/raven/.raven" ]; then
-	RAVEND_DEFAULT_DATADIR="/var/lib/raven/.raven"
+if [ -d "/var/lib/crow/.crow" ]; then
+	CROWD_DEFAULT_DATADIR="/var/lib/crow/.crow"
 else
-	RAVEND_DEFAULT_DATADIR="/var/lib/ravend"
+	CROWD_DEFAULT_DATADIR="/var/lib/crowd"
 fi
 
-RAVEND_CONFIGFILE=${RAVEND_CONFIGFILE:-/etc/raven/raven.conf}
-RAVEND_PIDDIR=${RAVEND_PIDDIR:-/var/run/ravend}
-RAVEND_PIDFILE=${RAVEND_PIDFILE:-${RAVEND_PIDDIR}/ravend.pid}
-RAVEND_DATADIR=${RAVEND_DATADIR:-${RAVEND_DEFAULT_DATADIR}}
-RAVEND_USER=${RAVEND_USER:-${RAVEN_USER:-raven}}
-RAVEND_GROUP=${RAVEND_GROUP:-raven}
-RAVEND_BIN=${RAVEND_BIN:-/usr/bin/ravend}
-RAVEND_NICE=${RAVEND_NICE:-${NICELEVEL:-0}}
-RAVEND_OPTS="${RAVEND_OPTS:-${RAVEN_OPTS}}"
+CROWD_CONFIGFILE=${CROWD_CONFIGFILE:-/etc/crow/crow.conf}
+CROWD_PIDDIR=${CROWD_PIDDIR:-/var/run/crowd}
+CROWD_PIDFILE=${CROWD_PIDFILE:-${CROWD_PIDDIR}/crowd.pid}
+CROWD_DATADIR=${CROWD_DATADIR:-${CROWD_DEFAULT_DATADIR}}
+CROWD_USER=${CROWD_USER:-${CROW_USER:-crow}}
+CROWD_GROUP=${CROWD_GROUP:-crow}
+CROWD_BIN=${CROWD_BIN:-/usr/bin/crowd}
+CROWD_NICE=${CROWD_NICE:-${NICELEVEL:-0}}
+CROWD_OPTS="${CROWD_OPTS:-${CROW_OPTS}}"
 
-name="Raven Core Daemon"
-description="Raven cryptocurrency P2P network daemon"
+name="Crow Core Daemon"
+description="Crow cryptocurrency P2P network daemon"
 
-command="/usr/bin/ravend"
-command_args="-pid=\"${RAVEND_PIDFILE}\" \
-		-conf=\"${RAVEND_CONFIGFILE}\" \
-		-datadir=\"${RAVEND_DATADIR}\" \
+command="/usr/bin/crowd"
+command_args="-pid=\"${CROWD_PIDFILE}\" \
+		-conf=\"${CROWD_CONFIGFILE}\" \
+		-datadir=\"${CROWD_DATADIR}\" \
 		-daemon \
-		${RAVEND_OPTS}"
+		${CROWD_OPTS}"
 
-required_files="${RAVEND_CONFIGFILE}"
-start_stop_daemon_args="-u ${RAVEND_USER} \
-			-N ${RAVEND_NICE} -w 2000"
-pidfile="${RAVEND_PIDFILE}"
+required_files="${CROWD_CONFIGFILE}"
+start_stop_daemon_args="-u ${CROWD_USER} \
+			-N ${CROWD_NICE} -w 2000"
+pidfile="${CROWD_PIDFILE}"
 
 # The retry schedule to use when stopping the daemon. Could be either
 # a timeout in seconds or multiple signal/timeout pairs (like
 # "SIGKILL/180 SIGTERM/300")
-retry="${RAVEND_SIGTERM_TIMEOUT}"
+retry="${CROWD_SIGTERM_TIMEOUT}"
 
 depend() {
 	need localmount net
@@ -50,29 +50,29 @@ start_pre() {
 	checkpath \
 	-d \
 	--mode 0750 \
-	--owner "${RAVEND_USER}:${RAVEND_GROUP}" \
-	"${RAVEND_DATADIR}"
+	--owner "${CROWD_USER}:${CROWD_GROUP}" \
+	"${CROWD_DATADIR}"
 
 	checkpath \
 	-d \
 	--mode 0755 \
-	--owner "${RAVEND_USER}:${RAVEND_GROUP}" \
-	"${RAVEND_PIDDIR}"
+	--owner "${CROWD_USER}:${CROWD_GROUP}" \
+	"${CROWD_PIDDIR}"
 
 	checkpath -f \
-	-o ${RAVEND_USER}:${RAVEND_GROUP} \
+	-o ${CROWD_USER}:${CROWD_GROUP} \
 	-m 0660 \
-	${RAVEND_CONFIGFILE}
+	${CROWD_CONFIGFILE}
 
 	checkconfig || return 1
 }
 
 checkconfig()
 {
-	if ! grep -qs '^rpcpassword=' "${RAVEND_CONFIGFILE}" ; then
+	if ! grep -qs '^rpcpassword=' "${CROWD_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run ravend."
-		eerror "The setting must appear in ${RAVEND_CONFIGFILE}"
+		eerror "ERROR: You must set a secure rpcpassword to run crowd."
+		eerror "The setting must appear in ${CROWD_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
 		eerror "and must not be the same as the rpcuser setting."
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Raven Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"Crow Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

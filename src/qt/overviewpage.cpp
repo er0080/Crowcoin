@@ -1,12 +1,12 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Crow Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "overviewpage.h"
 #include "ui_overviewpage.h"
 
-#include "ravenunits.h"
+#include "crowunits.h"
 #include "clientmodel.h"
 #include "guiconstants.h"
 #include "guiutil.h"
@@ -27,7 +27,7 @@ class TxViewDelegate : public QAbstractItemDelegate
     Q_OBJECT
 public:
     explicit TxViewDelegate(const PlatformStyle *_platformStyle, QObject *parent=nullptr):
-        QAbstractItemDelegate(parent), unit(RavenUnits::RVN),
+        QAbstractItemDelegate(parent), unit(CrowUnits::RVN),
         platformStyle(_platformStyle)
     {
 
@@ -85,7 +85,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = RavenUnits::formatWithUnit(unit, amount, true, RavenUnits::separatorAlways);
+        QString amountText = CrowUnits::formatWithUnit(unit, amount, true, CrowUnits::separatorAlways);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -169,14 +169,14 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentWatchOnlyBalance = watchOnlyBalance;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
-    ui->labelBalance->setText(RavenUnits::formatWithUnit(unit, balance, false, RavenUnits::separatorAlways));
-    ui->labelUnconfirmed->setText(RavenUnits::formatWithUnit(unit, unconfirmedBalance, false, RavenUnits::separatorAlways));
-    ui->labelImmature->setText(RavenUnits::formatWithUnit(unit, immatureBalance, false, RavenUnits::separatorAlways));
-    ui->labelTotal->setText(RavenUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, RavenUnits::separatorAlways));
-    ui->labelWatchAvailable->setText(RavenUnits::formatWithUnit(unit, watchOnlyBalance, false, RavenUnits::separatorAlways));
-    ui->labelWatchPending->setText(RavenUnits::formatWithUnit(unit, watchUnconfBalance, false, RavenUnits::separatorAlways));
-    ui->labelWatchImmature->setText(RavenUnits::formatWithUnit(unit, watchImmatureBalance, false, RavenUnits::separatorAlways));
-    ui->labelWatchTotal->setText(RavenUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, RavenUnits::separatorAlways));
+    ui->labelBalance->setText(CrowUnits::formatWithUnit(unit, balance, false, CrowUnits::separatorAlways));
+    ui->labelUnconfirmed->setText(CrowUnits::formatWithUnit(unit, unconfirmedBalance, false, CrowUnits::separatorAlways));
+    ui->labelImmature->setText(CrowUnits::formatWithUnit(unit, immatureBalance, false, CrowUnits::separatorAlways));
+    ui->labelTotal->setText(CrowUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, CrowUnits::separatorAlways));
+    ui->labelWatchAvailable->setText(CrowUnits::formatWithUnit(unit, watchOnlyBalance, false, CrowUnits::separatorAlways));
+    ui->labelWatchPending->setText(CrowUnits::formatWithUnit(unit, watchUnconfBalance, false, CrowUnits::separatorAlways));
+    ui->labelWatchImmature->setText(CrowUnits::formatWithUnit(unit, watchImmatureBalance, false, CrowUnits::separatorAlways));
+    ui->labelWatchTotal->setText(CrowUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, CrowUnits::separatorAlways));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users

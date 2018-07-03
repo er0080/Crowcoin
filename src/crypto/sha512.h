@@ -1,10 +1,10 @@
 // Copyright (c) 2014-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Crow Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_CRYPTO_SHA512_H
-#define RAVEN_CRYPTO_SHA512_H
+#ifndef CROW_CRYPTO_SHA512_H
+#define CROW_CRYPTO_SHA512_H
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -26,4 +26,4 @@ public:
     CSHA512& Reset();
 };
 
-#endif // RAVEN_CRYPTO_SHA512_H
+#endif // CROW_CRYPTO_SHA512_H
