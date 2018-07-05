@@ -161,7 +161,7 @@ public:
         pchMessageStart[1] = 0x41;
         pchMessageStart[2] = 0x56;
         pchMessageStart[3] = 0x4e;
-        nDefaultPort = 8767;
+        nDefaultPort = 2323;
         nPruneAfterHeight = 100000;
                   
         genesis = CreateGenesisBlock(1514999494, 25023712, 0x1e00ffff, 4, 5000 * COIN); 
@@ -173,8 +173,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x0000006b444bc2f2ffe627be9d9e7e7a0730000870ef6eb6da46c8eae389df90"));
         assert(genesis.hashMerkleRoot == uint256S("0x28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
 
-        vSeeds.emplace_back("seed-crow.crowcoin.org", false); 
-        vSeeds.emplace_back("seed-crow.bitactivate.com", false); 
+       // vSeeds.emplace_back("seed-crow.crowcoin.org", false); 
+       // vSeeds.emplace_back("seed-crow.bitactivate.com", false); 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,60);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122);
@@ -244,7 +244,7 @@ public:
         pchMessageStart[1] = 0x56;
         pchMessageStart[2] = 0x4E;
         pchMessageStart[3] = 0x54;
-        nDefaultPort = 18767;
+        nDefaultPort = 12323;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1517350340, 4791361, 0x1e00ffff, 4, 5000 * COIN); 
@@ -257,8 +257,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.emplace_back("seed-testnet-crow.crowcoin.org", false); 
-        vSeeds.emplace_back("seed-testnet-crow.bitactivate.com", false); 
+        //vSeeds.emplace_back("seed-testnet-crow.crowcoin.org", false); 
+        //vSeeds.emplace_back("seed-testnet-crow.bitactivate.com", false); 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -325,7 +325,7 @@ public:
         pchMessageStart[1] = 0x52;
         pchMessageStart[2] = 0x4F;
         pchMessageStart[3] = 0x57;
-        nDefaultPort = 18444;
+        nDefaultPort = 12313;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1510082300, 2, 0x207fffff, 4, 5000 * COIN);

@@ -1,6 +1,4 @@
 # List of fixed seed nodes for testnet
 
-# Onion nodes
-thfsmmn2jcrow.onion
-
+192.168.2.105:12323
 
