@@ -54,8 +54,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2018 Bitcoin is name of the game for new generation of firms";
-    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+    const char* pszTimestamp = "The Times 07/Jul/2018 Inside the Cave: Rescue Efforts in Thailand";
+    const CScript genesisOutputScript = CScript() << ParseHex("0429a5d5a6957967219016ebb40b1726bff7ee09e0c80f8678f4a65907104067f51eb245608d368f288e5c78658d4b5db3e1185b995bfa4fcf967f030b9de078c2") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -164,7 +164,7 @@ public:
         nDefaultPort = 2323;
         nPruneAfterHeight = 100000;
                   
-        genesis = CreateGenesisBlock(1514999494, 25023712, 0x1e00ffff, 4, 5000 * COIN); 
+        genesis = CreateGenesisBlock(1530974244, 25023712, 0x1e00ffff, 4, 5000 * COIN); 
 
         consensus.hashGenesisBlock = genesis.GetHash();        
         //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
