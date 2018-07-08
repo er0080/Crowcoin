@@ -6,7 +6,7 @@
 
 #include "chainparams.h"
 
-void main() {
+int main(int argc, char* argv[]) {
 
   CBlock genesis;
   
@@ -23,6 +23,8 @@ void main() {
     printf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
     printf("new mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
     printf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+    
+    return 0;
     
   }
 
