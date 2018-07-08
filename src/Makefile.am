@@ -60,7 +60,7 @@ EXTRA_LIBRARIES += \
 
 lib_LTLIBRARIES = $(LIBCROWCONSENSUS)
 
-bin_PROGRAMS =
+bin_PROGRAMS = 
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
@@ -70,7 +70,7 @@ if BUILD_CROWD
 endif
 
 if BUILD_CROW_UTILS
-  bin_PROGRAMS += crow-cli crow-tx
+  bin_PROGRAMS += crow-cli crow-tx genesis
 endif
 
 .PHONY: FORCE check-symbols check-security
