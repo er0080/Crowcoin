@@ -4,29 +4,41 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "chainparams.h"
+#include "chainparams.cpp"
+#include <sstream>
 
 int main(int argc, char* argv[]) {
 
-  CBlock genesis;
-  
-  genesis = CreateGenesisBlock(1530974244, 0, 0x1e00ffff, 4, 5000 * COIN);
+  uint32_t nBits = 0x1e00ffff;
+/*  int i;
 
-  if (true && genesis.GetHash() != hashGenesisBlock) {
-    
-    printf("recalculating params for mainnet.\n");
-    printf("old mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
-    printf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
-  
-    for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ }
-  
-    printf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-    printf("new mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
-    printf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-    
-    return 0;
-    
+  for (i=0; i < argc; i++){
+    printf("%s\n", argv[i]); 
   }
+
+  if (argc > 0) {  
+    std::istringstream ss( argv[0] );
+    
+    if (ss >> diff) {
+      printf("Invalid difficulty.\n");
+      return 1;
+    }
+  }
+*/
+  CBlock genesis = CreateGenesisBlock(1530974244, 0, nBits, 4, 5000 * COIN);
+
+  printf("Hashing genesis block: CreateGenesisBlock(1530974244, nonce, %#010x, 4, 5000 * COIN)\n", nBits);
+
+  for(genesis.nNonce = 0; genesis.GetHash() < uint256S("0x000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); genesis.nNonce++)
+  {
+  }
+  
+  printf("Genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+  printf("Genesis nonce: %u\n", genesis.nNonce);
+  printf("Genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+    
+  return 0;
+    
 
 }
 

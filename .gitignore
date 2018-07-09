@@ -1,5 +1,6 @@
 *.tar.gz
 
+src/genesis
 src/crow
 src/crowd
 src/crow-cli
