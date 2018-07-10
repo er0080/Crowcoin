@@ -164,14 +164,14 @@ public:
         nDefaultPort = 2323;
         nPruneAfterHeight = 100000;
                   
-        genesis = CreateGenesisBlock(1530974244, 25023712, 0x1e00ffff, 4, 5000 * COIN); 
+        genesis = CreateGenesisBlock(1530974244, 24430213, 0x1e00ffff, 4, 5000 * COIN); 
 
         consensus.hashGenesisBlock = genesis.GetHash();        
         //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
         //std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0000006b444bc2f2ffe627be9d9e7e7a0730000870ef6eb6da46c8eae389df90"));
-        assert(genesis.hashMerkleRoot == uint256S("0x28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000003bc6405e174d67d0ddaf070864712c4f0e9184b83494421232865441a4"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf2fefa1e386abf4110b88c7a3b40ed71d46fbe06182177e294781d667a43236f"));
 
        // vSeeds.emplace_back("seed-crow.crowcoin.org", false); 
        // vSeeds.emplace_back("seed-crow.bitactivate.com", false); 
