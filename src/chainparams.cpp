@@ -124,12 +124,12 @@ public:
         consensus.nSegwitEnabled = true;
         consensus.nCSVEnabled = true;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 2016 * 60; // 1.4 days
+        consensus.nPowTargetTimespan = 15 * 60; // 1.4 days
         consensus.nPowTargetSpacing = 1 * 60;
 	consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 12; // 95% of 2016
+        consensus.nMinerConfirmationWindow = 15; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -222,12 +222,12 @@ public:
         consensus.nCSVEnabled = true;
 
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 2016 * 60; // 1.4 days
+        consensus.nPowTargetTimespan =15 * 60; // 1.4 days
         consensus.nPowTargetSpacing = 1 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 10; // 75% for testchains
+        consensus.nMinerConfirmationWindow = 15; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -240,19 +240,20 @@ public:
         consensus.defaultAssumeValid = uint256S("0x00");
 
 
-        pchMessageStart[0] = 0x52;
-        pchMessageStart[1] = 0x56;
-        pchMessageStart[2] = 0x4E;
-        pchMessageStart[3] = 0x54;
+        pchMessageStart[0] = 0x7a;
+        pchMessageStart[1] = 0xb7;
+        pchMessageStart[2] = 0x41;
+        pchMessageStart[3] = 0x53;
         nDefaultPort = 12323;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1517350340, 4791361, 0x1e00ffff, 4, 5000 * COIN); 
+        genesis = CreateGenesisBlock(1530974244, 25737715, 0x1e00ffff, 4, 5000 * COIN); 
         consensus.hashGenesisBlock = genesis.GetHash();
 
         //Test MerkleRoot and GenesisBlock
-        assert(consensus.hashGenesisBlock == uint256S("0x000000055c6b201ac99ed634953f92bd52239f5b26e090ce3caab6ec81bec921"));
-        assert(genesis.hashMerkleRoot == uint256S("0x28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000000c87c109ecd2474c77c61e8dd6b29a20ec3b50e850afae41de39503c9be"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf2fefa1e386abf4110b88c7a3b40ed71d46fbe06182177e294781d667a43236f"));
+
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -260,13 +261,13 @@ public:
         //vSeeds.emplace_back("seed-testnet-crow.crowcoin.org", false); 
         //vSeeds.emplace_back("seed-testnet-crow.bitactivate.com", false); 
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,8);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,22);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,44);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x05, 0x36, 0x45, 0xcd};
+        base58Prefixes[EXT_SECRET_KEY] = {0x05, 0x36, 0xaf, 0x34};
 
-        bech32_hrp = "tr";
+        bech32_hrp = "t3AtCr0W";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -305,12 +306,12 @@ public:
         consensus.nCSVEnabled = true;
         consensus.nSubsidyHalvingInterval = 150;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 2016 * 60; // 1.4 days
+        consensus.nPowTargetTimespan = 15 * 60; // 1.4 days
         consensus.nPowTargetSpacing = 1 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
-        consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
+        consensus.nRuleChangeActivationThreshold = 10; // 75% for testchains
+        consensus.nMinerConfirmationWindow = 5; // Faster than normal for regtest (144 instead of 2016)
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;
@@ -321,21 +322,21 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0x43;
-        pchMessageStart[1] = 0x52;
-        pchMessageStart[2] = 0x4F;
-        pchMessageStart[3] = 0x57;
+        pchMessageStart[0] = 0x6b;
+        pchMessageStart[1] = 0xb2;
+        pchMessageStart[2] = 0x2d;
+        pchMessageStart[3] = 0xdd;
         nDefaultPort = 12313;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1510082300, 2, 0x207fffff, 4, 5000 * COIN);
+        genesis = CreateGenesisBlock(1510082300, 0, 0x207fffff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         std::cout << "HGB: " << consensus.hashGenesisBlock.GetHex() << std::endl;
         std::cout << "HGR: " << genesis.hashMerkleRoot.GetHex() << std::endl;
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0ae5a91dc8c60c02f68cf6579e153d428b2298f231c89e96cbeb609ecc00d9a0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x9686ea5f254a7542381897095789b44282f5d8685cee089e94c4f373cec99128"));
+        assert(consensus.hashGenesisBlock == uint256S("0x7f494f2968bb45d4d1c39ec868cfb9f9f5c9c083a4e6462059d3a8d4dda2f2fb"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf2fefa1e386abf4110b88c7a3b40ed71d46fbe06182177e294781d667a43236f"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -355,13 +356,13 @@ public:
             0
         };
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,91);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,22);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,35);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x06, 0x37, 0xaa, 0x1f};
+        base58Prefixes[EXT_SECRET_KEY] = {0x06, 0x37, 0xcb, 0x9a};
 
-        bech32_hrp = "rcrt";
+        bech32_hrp = "rt3AtCr0W";
     }
 };
 

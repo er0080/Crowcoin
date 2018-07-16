@@ -13,11 +13,11 @@
 
 int main(int argc, char* argv[]) {
 
-  uint32_t nBits = 0x1e00ffff;
+  uint32_t nBits = 0x207fffff;
   CBlock genesis = CreateGenesisBlock(1530974244, 0, nBits, 4, 5000 * COIN);
   
   Consensus::Params consensus;
-  consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
+  consensus.powLimit = uint256S("0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
 
   printf("Hashing genesis block: CreateGenesisBlock(1530974244, nonce, %#010x, 4, 5000 * COIN)\n", nBits);
   
