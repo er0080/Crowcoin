@@ -329,7 +329,7 @@ public:
         nDefaultPort = 12313;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1510082300, 0, 0x207fffff, 4, 5000 * COIN);
+        genesis = CreateGenesisBlock(1530974244, 0, 0x207fffff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         std::cout << "HGB: " << consensus.hashGenesisBlock.GetHex() << std::endl;
