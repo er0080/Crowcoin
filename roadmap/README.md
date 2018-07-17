@@ -2,7 +2,7 @@
 
 ### Phase 1 - Complete
 
-Crowcoin (RVN) is a Proof of Work coin built on the Bitcoin UTXO model. As with other Bitcoin derivatives, RVN coins are distributed to persons augmenting the Crow network by mining Crow.
+Crowcoin (CROW) is a Proof of Work coin built on the Bitcoin UTXO model. As with other Bitcoin derivatives, CROW coins are distributed to persons augmenting the Crow network by mining Crow.
 *  x1000 coin distribution (21 Billion Total)
 *  10x faster blocks (1 per minute)
 *  In app CPU mining
@@ -19,7 +19,7 @@ ASIC Resistance - A published commitment to continual attempts at ASIC resistanc
 
 #### Asset Support
 
-Crowcoin will be a hard fork that extends Crow to include the ability to issue and transfer assets. The expected release of asset capabilities will be approximately seven months after the release of RVN. Crow will be extended to allow issuing, reissuing, and transfer of assets. Assets can be reissuable or limited to a set supply at the point of issuance. The cost to create assets will be 500 RVN to create any qty of an asset. Each asset name must be unique. Asset names will be limited to A-Z and 0-9, '_' and '.' and must be at least three characters long. The '.' and the '_' cannot be the first, or the last character, or be consecutive.  
+Crowcoin will be a hard fork that extends Crow to include the ability to issue and transfer assets. The expected release of asset capabilities will be approximately seven months after the release of CROW. Crow will be extended to allow issuing, reissuing, and transfer of assets. Assets can be reissuable or limited to a set supply at the point of issuance. The cost to create assets will be 500 CROW to create any qty of an asset. Each asset name must be unique. Asset names will be limited to A-Z and 0-9, '_' and '.' and must be at least three characters long. The '.' and the '_' cannot be the first, or the last character, or be consecutive.  
 
 Examples of valid assets:  
 THE_GAME  
@@ -34,9 +34,9 @@ AB
 12  
 .FIRST  
 
-The RVN used to issue assets will be sent to a burn address, which will reduce the amount of RVN available.  
+The CROW used to issue assets will be sent to a burn address, which will reduce the amount of CROW available.  
 
-Asset transfers require the standard RVN transaction fees for transfer from one address to another.
+Asset transfers require the standard CROW transaction fees for transfer from one address to another.
 
 #### Metadata
 
@@ -44,9 +44,9 @@ Metadata about the token can be stored in IPFS. Initially this cannot be changed
 
 #### Rewards
 
-Reward capabilities will be added to allow payment (in RVN) to all holders of an asset. Payments of RVN would be distributed to all asset holders pro rata. This is useful for paying dividends, dividing payments, or rewarding a group of token holders.  
+Reward capabilities will be added to allow payment (in CROW) to all holders of an asset. Payments of CROW would be distributed to all asset holders pro rata. This is useful for paying dividends, dividing payments, or rewarding a group of token holders.  
 
-Example: A small software company issues an asset GAMECO that represents a share of the project. GAMECO tokens can be traded with others. Once the software company profits, those profits can be distributed to all holders of GAMECO by sending the profits (via RVN) to all holders of GAMECO.
+Example: A small software company issues an asset GAMECO that represents a share of the project. GAMECO tokens can be traded with others. Once the software company profits, those profits can be distributed to all holders of GAMECO by sending the profits (via CROW) to all holders of GAMECO.
 
 #### Block Size
 
@@ -54,11 +54,11 @@ Crow may increase the blocksize from 1 MB to X MB to allow for more on-chain tra
 
 ### Phase 3 - Rewards
 
-Rewards allow payment in RVN to asset holders.
+Rewards allow payment in CROW to asset holders.
 
 ### Phase 4 - Unique Assets
 
-Once created, assets can be made unique for a cost of 5 RVN. Only non-divisible assets can be made unique. This moves an asset to a UTXO and associates a unique identifier with the txid. From this point the asset can be moved from one address to another and can be traced back to its origin. Only the issuer of the original asset can make an asset unique.  
+Once created, assets can be made unique for a cost of 5 CROW. Only non-divisible assets can be made unique. This moves an asset to a UTXO and associates a unique identifier with the txid. From this point the asset can be moved from one address to another and can be traced back to its origin. Only the issuer of the original asset can make an asset unique.  
 The costs to make unique assets will be sent to a burn address.  
 
 Some examples of unique assets:  
@@ -66,7 +66,7 @@ Some examples of unique assets:
 *  A software developer can issue the asset with the name of their software ABCGAME, and then assign each ABCGAME token a unique id or license key. The game tokens could be transferred as the license transfers. Each token ABCGAME:398222 and ABCGAME:
 are unique tokens.
 *  In game assets. A game ZYX_GAME could create unique limited edition in-game assets that are owned and used by the game player. Example: ZYX_GAME:Sword005 and ZYX_GAME:Purse
-*  RVN based unique assets can be tied to real world assets. Create an asset named GOLDVAULT. Each gold coin or gold bar in a vault can be serialized and audited. Associated unique assets GOLDVAULT:444322 and GOLDVAULT:555994 can be created to represent the specific assets in the physical gold vault. The public nature of the chain allows for full transparency.
+*  CROW based unique assets can be tied to real world assets. Create an asset named GOLDVAULT. Each gold coin or gold bar in a vault can be serialized and audited. Associated unique assets GOLDVAULT:444322 and GOLDVAULT:555994 can be created to represent the specific assets in the physical gold vault. The public nature of the chain allows for full transparency.
 
 ### Phase 5 - Messaging
 
@@ -74,7 +74,7 @@ Messaging to token holders by authorized senders will be layered on top of the P
 
 ### Phase 6 - Voting
 
-Voting will be accomplished by creating and distributing parallel tokens to token holders. These tokens can be sent to RVN addresses to record a vote.
+Voting will be accomplished by creating and distributing parallel tokens to token holders. These tokens can be sent to CROW addresses to record a vote.
 
 ### Appendix A - RPC commands for assets
 
@@ -110,7 +110,7 @@ This returns details for a specific asset transaction.
 This returns a list of transactions for a given asset.  
 
 `reward(from_address, asset, amount, except=[])`  
-Sends RVN to holders of the the specified asset. The Crow is split pro-rata to holders of the asset. Any remainder that cannot be evenly divided to the satoshi (1/100,000,000 RVN) level will be added to the mining fee. ​except​ is a list of addresses to exclude from the distribution - used so that you could exclude treasury shares that do not participate in the reward.  
+Sends CROW to holders of the the specified asset. The Crow is split pro-rata to holders of the asset. Any remainder that cannot be evenly divided to the satoshi (1/100,000,000 CROW) level will be added to the mining fee. ​except​ is a list of addresses to exclude from the distribution - used so that you could exclude treasury shares that do not participate in the reward.  
 
 `send_asset(from_address, from_asset, to_asset, amount, except=[])`  
 Sends an asset to holders of the the specified to_asset. This can be used to send a voting token to holders of an asset. Combined with a messaging protocol explaining the vote, it could act as a distributed voting system.

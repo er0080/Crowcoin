@@ -13,7 +13,7 @@ In the fictional world of Westeros, crows are used as messengers who carry state
 
 Thank you to the Bitcoin founder and developers. The Crowcoin project was launched based on the hard work and continuous effort of over 430 Bitcoin developers who made over 14,000 commits by the date of the Crowcoin code fork. We are eternally grateful to you for your diligence in making a secure network and for your support of free and open source software development. The Crowcoin project is built on the foundation you built.
 
-> **Abstract**. Crowcoin is a blockchain and platform optimized for transferring assets, such as tokens, from one holder to another. Based on the extensive development and testing of the UTXO model of the Bitcoin protocol, Crowcoin is built on a fork of the Bitcoin code. Key changes include a block reward time of one minute, a change in the number of coins issued, but not the weighted distribution schedule and the addition of asset creation and messaging capabilities. Crowcoin is free and open source. All Crowcoin (RVN) are fairly issued and mined publicly and transparently using Proof of Work (POW) using the x16r algorithm which was created for Crowcoin. There is no private, public, founder, or developer allocation set aside. Crowcoin is intended to prioritize security, user control, privacy, and censorship resistance. It is open to use and development in any jurisdiction, while allowing simple additional features for users based on need.
+> **Abstract**. Crowcoin is a blockchain and platform optimized for transferring assets, such as tokens, from one holder to another. Based on the extensive development and testing of the UTXO model of the Bitcoin protocol, Crowcoin is built on a fork of the Bitcoin code. Key changes include a block reward time of one minute, a change in the number of coins issued, but not the weighted distribution schedule and the addition of asset creation and messaging capabilities. Crowcoin is free and open source. All Crowcoin (CROW) are fairly issued and mined publicly and transparently using Proof of Work (POW) using the x16r algorithm which was created for Crowcoin. There is no private, public, founder, or developer allocation set aside. Crowcoin is intended to prioritize security, user control, privacy, and censorship resistance. It is open to use and development in any jurisdiction, while allowing simple additional features for users based on need.
 
 ## 1. Introduction
 
@@ -67,7 +67,7 @@ Assets or tokens can be used for anything the creator’s imagination can conjur
 **Representing a share of a project**
 *  Securities tokens: stock or shares of a company where the shares are represented by a token
 rather than a physical stock certificate
-*  Securities or partnership interests with the built-in ability to pay dividends in RVN (legal in
+*  Securities or partnership interests with the built-in ability to pay dividends in CROW (legal in
 many free market countries)
 *  Tokens which represent a coop, limited partnership, royalty sharing or profit sharing platform
 *  A token which represents a crowd-funded item with the ability to transfer or resell the item
@@ -95,7 +95,7 @@ Create a platform like Bitcoin with a new mining algorithm, x16r[13], intended t
 
 Launch the token with no pre-mine and a fair launch to widely distribute the tokens.
 
-Allow the mining rate to increase and the value of the RVN token to naturally grow and gradually disburse to holders that understand the value of the platform.
+Allow the mining rate to increase and the value of the CROW token to naturally grow and gradually disburse to holders that understand the value of the platform.
 
 Utilize proof of work mining, not because it burns a scarce resource of electricity, or the requirement of computer hardware, but instead focuses on the most valuable part of the "work" which is building an ever-larger and time-based wall that protects user data from future tampering and censorship with every new layer.
 
@@ -107,7 +107,7 @@ Deep into that darkness peering, long I stood there wondering, fearing, Doubting
 </i></p>
 Token names are guaranteed unique. The first to issue a token with a given name is the owner of that token project.
 
-The issuer of a token burns RVN and must provide a unique token name. The issuer determines the quantity issued, the number of decimal places, and whether they will be allowed to issue more of the same token in the future.
+The issuer of a token burns CROW and must provide a unique token name. The issuer determines the quantity issued, the number of decimal places, and whether they will be allowed to issue more of the same token in the future.
 
 Allow the issuance of other tokens using similar method as Mastercoin, Counterparty, or CoinSpark[14].
 
@@ -133,11 +133,11 @@ Only an open protocol will work in a global economy where there are multiple jur
 
 ## 6. Rewards
 
-Allow the payment of rewards (or dividends) in the native token. With a single command the reward, denominated in RVN, is automatically divided evenly and sent pro-rata to the holders of the asset.
+Allow the payment of rewards (or dividends) in the native token. With a single command the reward, denominated in CROW, is automatically divided evenly and sent pro-rata to the holders of the asset.
 
 Example:
 
-A young child, in a country that permits it, could create a token that represents a lemonade stand business. Suppose she creates 10,000 LEMONADE tokens. These tokens could be used to raise funds for the lemonade stand at AUD$0.01 per LEMONADE token allowing her to raise AUD$ to build her business. These tokens can be sold and transferred easily by the owners. Suppose the lemonade stand does extraordinarily well because the neighborhood is invested in this entrepreneurial project. Now our fictional eight-year-old wants to reward those who believed in her project. With one command, she can send profits - denominated in any value RVN may have - to LEMONADE token holders. There could even be new holders of LEMONADE tokens that she’s never met. The built-in ease of use should allow anyone, anywhere in the world to do so on a mobile phone, or computer running Windows, Mac, or Linux.
+A young child, in a country that permits it, could create a token that represents a lemonade stand business. Suppose she creates 10,000 LEMONADE tokens. These tokens could be used to raise funds for the lemonade stand at AUD$0.01 per LEMONADE token allowing her to raise AUD$ to build her business. These tokens can be sold and transferred easily by the owners. Suppose the lemonade stand does extraordinarily well because the neighborhood is invested in this entrepreneurial project. Now our fictional eight-year-old wants to reward those who believed in her project. With one command, she can send profits - denominated in any value CROW may have - to LEMONADE token holders. There could even be new holders of LEMONADE tokens that she’s never met. The built-in ease of use should allow anyone, anywhere in the world to do so on a mobile phone, or computer running Windows, Mac, or Linux.
 
 For such a global system to work it will need to be independent of regulatory jurisdictions. This is not due to ideological belief, but practicality: if the rails for blockchain asset transfer are not censorship resistant and jurisdiction agnostic, any given jurisdiction may conflict with another. In legacy systems, wealth was generally confined in the jurisdiction of the holder and therefore easy to control based on the policies of that jurisdiction. Because of the global nature of blockchain technology, any protocol level ability to control wealth will potentially place jurisdictions in conflict and will not be able to operate fairly.
 
@@ -153,7 +153,7 @@ Some examples of unique tokens:
 
 *  In game assets. A game ZYX_GAME could create unique limited edition in-game assets that are owned and used by the game player. Example: ZYX_GAME:SwordOfTruth005 and ZYX_GAME:HammerOfThor These in game assets could then be kept, traded with other players via QR codes and wallets or uploaded into an upgrade or different version of a game.
 
-*  RVN based unique assets can be tied to real world assets. Create an asset named GOLDVAULT. Each gold coin or gold bar in a vault can be serialized and audited. Associated unique assets GOLDVAULT:444322 and GOLDVAULT:555994 can be created to represent the specific assets in the physical gold vault. The public nature of the chain allows for full transparency.
+*  CROW based unique assets can be tied to real world assets. Create an asset named GOLDVAULT. Each gold coin or gold bar in a vault can be serialized and audited. Associated unique assets GOLDVAULT:444322 and GOLDVAULT:555994 can be created to represent the specific assets in the physical gold vault. The public nature of the chain allows for full transparency.
 
 Example:
 
@@ -210,7 +210,7 @@ Other projects can use this chain. Second layer solutions, particularly those be
 
 ## 12. Conclusion
 
-Crowcoin is a platform coin built on the UTXO[19] model of Bitcoin. Modifying Bitcoin code to add these capabilities is not practical, but Crowcoin is a platform built from a code fork and issuing newly mined RVN. Crowcoin will be adding assets, rewards, unique assets, messaging, and voting. The Crow protocol’s capabilities will be rolled out in phases which will be done as a planned hard fork upgrade. The code base is designed allow users and developers to maintain a secure, decentralized, and tamper resistant network.
+Crowcoin is a platform coin built on the UTXO[19] model of Bitcoin. Modifying Bitcoin code to add these capabilities is not practical, but Crowcoin is a platform built from a code fork and issuing newly mined CROW. Crowcoin will be adding assets, rewards, unique assets, messaging, and voting. The Crow protocol’s capabilities will be rolled out in phases which will be done as a planned hard fork upgrade. The code base is designed allow users and developers to maintain a secure, decentralized, and tamper resistant network.
 
 The Crowcoin project can also serve as a base and starting point for projects, second layer solutions, experiments, and business ideas which might benefit from either the Bitcoin-based code base with adjustments or the native additional features added to the Crowcoin blockchain.
 

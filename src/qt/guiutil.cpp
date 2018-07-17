@@ -188,7 +188,7 @@ bool parseCrowURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!CrowUnits::parse(CrowUnits::RVN, i->second, &rv.amount))
+                if(!CrowUnits::parse(CrowUnits::CROW, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -227,7 +227,7 @@ QString formatCrowURI(const SendCoinsRecipient &info)
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(CrowUnits::format(CrowUnits::RVN, info.amount, false, CrowUnits::separatorNever));
+        ret += QString("?amount=%1").arg(CrowUnits::format(CrowUnits::CROW, info.amount, false, CrowUnits::separatorNever));
         paramCount++;
     }
 

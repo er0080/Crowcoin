@@ -18,9 +18,9 @@ CrowUnits::CrowUnits(QObject *parent):
 QList<CrowUnits::Unit> CrowUnits::availableUnits()
 {
     QList<CrowUnits::Unit> unitlist;
-    unitlist.append(RVN);
-    unitlist.append(mRVN);
-    unitlist.append(uRVN);
+    unitlist.append(CROW);
+    unitlist.append(mCROW);
+    unitlist.append(uCROW);
     return unitlist;
 }
 
@@ -28,9 +28,9 @@ bool CrowUnits::valid(int unit)
 {
     switch(unit)
     {
-    case RVN:
-    case mRVN:
-    case uRVN:
+    case CROW:
+    case mCROW:
+    case uCROW:
         return true;
     default:
         return false;
@@ -41,9 +41,9 @@ QString CrowUnits::name(int unit)
 {
     switch(unit)
     {
-    case RVN: return QString("RVN");
-    case mRVN: return QString("mRVN");
-    case uRVN: return QString::fromUtf8("μRVN");
+    case CROW: return QString("CROW");
+    case mCROW: return QString("mCROW");
+    case uCROW: return QString::fromUtf8("μCROW");
     default: return QString("???");
     }
 }
@@ -52,9 +52,9 @@ QString CrowUnits::description(int unit)
 {
     switch(unit)
     {
-    case RVN: return QString("Crows");
-    case mRVN: return QString("Milli-Crows (1 / 1" THIN_SP_UTF8 "000)");
-    case uRVN: return QString("Micro-Crows (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case CROW: return QString("Crows");
+    case mCROW: return QString("Milli-Crows (1 / 1" THIN_SP_UTF8 "000)");
+    case uCROW: return QString("Micro-Crows (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -63,9 +63,9 @@ qint64 CrowUnits::factor(int unit)
 {
     switch(unit)
     {
-    case RVN:  return 100000000;
-    case mRVN: return 100000;
-    case uRVN: return 100;
+    case CROW:  return 100000000;
+    case mCROW: return 100000;
+    case uCROW: return 100;
     default:   return 100000000;
     }
 }
@@ -74,9 +74,9 @@ int CrowUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case RVN: return 8;
-    case mRVN: return 5;
-    case uRVN: return 2;
+    case CROW: return 8;
+    case mCROW: return 5;
+    case uCROW: return 2;
     default: return 0;
     }
 }
