@@ -1,6 +1,6 @@
 
 // Copyright (c) 2018 Eric Parent
-// Copyright (c) 2018 The Crow Core developers
+// Copyright (c) 2018 The Raven Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
