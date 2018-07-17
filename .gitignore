@@ -11,6 +11,16 @@ src/qt/test/test_crow-qt
 .vscode
 output.txt
 
+src/bench/bench_crow.exe
+src/crow-cli.exe
+src/crow-tx.exe
+src/crowd.exe
+src/genesis.exe
+src/qt/crow-qt.exe
+src/qt/test/test_crow-qt.exe
+src/test/test_crow.exe
+src/test/test_crow_fuzzy.exe
+
 # autoreconf
 Makefile.in
 aclocal.m4
