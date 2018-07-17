@@ -1,3 +1,4 @@
+// Copyright (c) 2018 Eric Parent
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Raven Core developers
 // Distributed under the MIT software license, see the accompanying
