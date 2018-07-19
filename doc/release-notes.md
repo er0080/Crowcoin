@@ -10,7 +10,7 @@ and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/CrowProject/Crowcoin/issues>
+  <https://github.com/er0080/Crowcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 

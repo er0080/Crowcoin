@@ -22,7 +22,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/CrowProject/Crowcoin.git"
+- "url": "https://github.com/er0080/Crowcoin.git"
   "dir": "crow"
 files: []
 script: |

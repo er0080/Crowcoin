@@ -2,7 +2,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Crow
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
  irc://#crow@freenode.net
-Source: https://github.com/CrowProject/Crowcoin
+Source: https://github.com/er0080/Crowcoin
 
 Files: *
 Copyright: 2009-2017, Crow Core Developers

@@ -28,7 +28,7 @@ Build-Depends: debhelper,
 Standards-Version: 3.9.2
 Homepage: https://github.com/er0080/Crowcoin/
 Vcs-Git: git://github.com/CrowProject/Crowcoin.git
-Vcs-Browser: https://github.com/CrowProject/Crowcoin
+Vcs-Browser: https://github.com/er0080/Crowcoin
 
 Package: crowd
 Architecture: any

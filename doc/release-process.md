@@ -3,9 +3,9 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/CrowProject/Crowcoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/er0080/Crowcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/CrowProject/Crowcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/er0080/Crowcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -36,7 +36,7 @@ Check out the source code in the following directory hierarchy.
     git clone https://github.com/crow-core/gitian.sigs.git
     git clone https://github.com/crow-core/crow-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/CrowProject/Crowcoin.git
+    git clone https://github.com/er0080/Crowcoin.git
 
 ### Crow maintainers/release engineers, suggestion for writing release notes
 
@@ -304,6 +304,6 @@ crow.org (see below for crow.org update instructions).
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/CrowProject/Crowcoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/er0080/Crowcoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

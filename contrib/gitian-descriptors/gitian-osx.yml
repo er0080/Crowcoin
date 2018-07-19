@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/CrowProject/Crowcoin.git"
+- "url": "https://github.com/er0080/Crowcoin.git"
   "dir": "crow"
 files:
 - "MacOSX10.11.sdk.tar.gz"

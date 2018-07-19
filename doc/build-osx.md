@@ -31,7 +31,7 @@ Build Crow Core
 
 1. Clone the crow source code and cd into `crow`
 
-        git clone https://github.com/CrowProject/Crowcoin
+        git clone https://github.com/er0080/Crowcoin
         cd Crowcoin
 
 2.  Build crow-core:
