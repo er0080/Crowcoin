@@ -135,7 +135,7 @@ Crowcoin repo's [root README](https://github.com/CrowProject/Crowcoin/blob/maste
 - Discuss on the [CrowcoinTalk](https://www.crowcointalk.org/) forums, in the [Development & Technical Discussion board](https://www.crowcointalk.org/?forum=661517).
 - Discuss on chat [Discord](https://discord.gg/DUkcBst), [Telegram](https://t.me/CrowcoinDev) or [Reddit](https://www.reddit.com/r/Crowcoin/).
 - Find out more on the [Crowcoin Wiki](https://crow.wiki/wiki/Crowcoin_Wiki)
-- Visit the project home [Crowcoin.org](https://crowcoin.org)
+- Visit the project home [Crowcoin.org](https://github.com/er0080/Crowcoin)
 
 ### Miscellaneous
 - [Assets Attribution](https://github.com/CrowProject/Crowcoin/blob/master/doc/assets-attribution.md)

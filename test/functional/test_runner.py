@@ -214,7 +214,7 @@ def main():
 
     if config["environment"]["EXEEXT"] == ".exe" and not args.force:
         # https://github.com/CrowProject/Crowcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
-        # https://github.com/CrowProject/Crowcoin/pull/5677#issuecomment-136646964
+        # https://github.com/RavenProject/Ravencoin/pull/5677#issuecomment-136646964
         print("Tests currently disabled on Windows by default. Use --force option to enable")
         sys.exit(0)
 

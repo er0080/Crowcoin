@@ -14,7 +14,7 @@ Please report bugs using the issue tracker at GitHub:
 
 To receive security and update notifications, please subscribe to:
 
-  <https://crowcoin.org/en/list/announcements/join/>
+  <https://github.com/er0080/Crowcoin/en/list/announcements/join/>
 
 How to Upgrade
 ==============
